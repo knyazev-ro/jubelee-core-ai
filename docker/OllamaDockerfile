@@ -1,0 +1,12 @@
+FROM ollama/ollama:0.9.7-rc0-rocm
+
+WORKDIR /app
+
+ENV OLLAMA_HOST=0.0.0.0:11434
+
+COPY ../Modelfile ./Modelfile
+
+COPY ../entrypoint.sh ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]

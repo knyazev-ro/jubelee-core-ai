@@ -1,0 +1,9 @@
+services:
+  ollama:
+    container_name: 'jubelee-ai'
+    build:
+      dockerfile: ./docker/OllamaDockerfile
+    ports:
+      - "11255:11434"
+    volumes:
+        - ./ollama:/root/.ollama
